@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 app.use(cors()); // Allow all origins
 
-app.get("/api/gainers", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const response = await axios.get("https://www.nseindia.com/api/live-analysis-variations?index=gainers", {
       headers: {
