@@ -62,7 +62,7 @@
 
 async function fetchGainers() {
     try {
-        const response = await fetch("http://localhost:3000/");
+        const response = await fetch("/api/server");
         
         if (!response.ok) {
             throw new Error(`Server responded with status ${response.status}`);
