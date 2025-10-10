@@ -11,8 +11,8 @@ const add="/api/server";
   const t13= document.getElementById("t3");
   const t14= document.getElementById("t4");
 
-  // if(global.currentPage == "/public/index.html"){
-  if(global.currentPage == "/index.html"){
+  // if(global.currentPage == "/"){
+  if(global.currentPage == "/"){
     t11.style.backgroundColor="rgb(213, 213, 107)";
     t12.style.backgroundColor="white";
     t13.style.backgroundColor="white";
