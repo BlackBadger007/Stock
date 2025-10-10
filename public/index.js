@@ -11,28 +11,32 @@ const add="/api/server";
   const t13= document.getElementById("t3");
   const t14= document.getElementById("t4");
 
-  if(global.currentPage == "/public/index.html"){
+  // if(global.currentPage == "/public/index.html"){
+  if(global.currentPage == "/index.html"){
     t11.style.backgroundColor="rgb(213, 213, 107)";
     t12.style.backgroundColor="white";
     t13.style.backgroundColor="white";
     t14.style.backgroundColor="white";
     fetchGainers();
     setInterval(fetchGainers, 13000);
-  }else if(global.currentPage == "/public/nifty50.html"){
+  // }else if(global.currentPage == "/public/nifty50.html"){
+  }else if(global.currentPage == "/nifty50.html"){
     t13.style.backgroundColor="rgb(213, 213, 107)";
     t12.style.backgroundColor="white";
     t11.style.backgroundColor="white";
     t14.style.backgroundColor="white";
     fetchNiftyGainers();
     setInterval(fetchGainers, 13000);
-  }else if(global.currentPage == "/public/bankNifty.html"){
+  // }else if(global.currentPage == "/public/bankNifty.html"){
+  }else if(global.currentPage == "/bankNifty.html"){
     t12.style.backgroundColor="rgb(213, 213, 107)";
     t11.style.backgroundColor="white";
     t13.style.backgroundColor="white";
     t14.style.backgroundColor="white";
     fetchBankNiftyGainers();
     setInterval(fetchGainers, 13000);
-  }else if(global.currentPage == "/public/niftyNext50.html"){
+  // }else if(global.currentPage == "/public/niftyNext50.html"){
+  }else if(global.currentPage == "/niftyNext50.html"){
     t14.style.backgroundColor="rgb(213, 213, 107)";
     t12.style.backgroundColor="white";
     t13.style.backgroundColor="white";
