@@ -276,7 +276,6 @@ async function fetchGainers() {
         time.innerText = `${data.allSec.timestamp}`;
         
         // Render table
-        console.log(data);
         const gainers = data.allSec.data;
         const tbody = document.querySelector("#gainersTable tbody");
         tbody.innerHTML = "";
