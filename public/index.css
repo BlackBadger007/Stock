@@ -85,6 +85,10 @@ margin-right: 15px;
   #tmsp{
     background-color: white;
   }
+  td:hover{
+      cursor: pointer;
+      color: rgb(90, 20, 156);
+    }
 
   @media (max-width: 600px) {
     table{
@@ -130,10 +134,7 @@ margin-right: 15px;
     #fifi h2{
       margin-left: 10px;
     }
-    td:hover{
-      cursor: pointer;
-      color: rgb(90, 20, 156);
-    }
+    
 }
 
 
