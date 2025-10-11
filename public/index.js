@@ -26,7 +26,7 @@ const add="/api/server";
     t11.style.backgroundColor="white";
     t14.style.backgroundColor="white";
     fetchNiftyGainers();
-    setInterval(fetchGainers, 13000);
+    setInterval(fetchNiftyGainers, 13000);
   // }else if(global.currentPage == "/public/bankNifty.html"){
   }else if(global.currentPage == "/bankNifty.html"){
     t12.style.backgroundColor="rgb(213, 213, 107)";
@@ -34,7 +34,7 @@ const add="/api/server";
     t13.style.backgroundColor="white";
     t14.style.backgroundColor="white";
     fetchBankNiftyGainers();
-    setInterval(fetchGainers, 13000);
+    setInterval(fetchBankNiftyGainers, 13000);
   // }else if(global.currentPage == "/public/niftyNext50.html"){
   }else if(global.currentPage == "/niftyNext50.html"){
     t14.style.backgroundColor="rgb(213, 213, 107)";
@@ -42,7 +42,7 @@ const add="/api/server";
     t13.style.backgroundColor="white";
     t11.style.backgroundColor="white";
     fetchNiftyNextGainers();
-    setInterval(fetchGainers, 13000);
+    setInterval(fetchNiftyNextGainers, 13000);
   }
 
   async function fetchNiftyGainers() {
@@ -54,7 +54,6 @@ const add="/api/server";
         }
         
         const data = await response.json();
-        // console.log(data);
  const geft = document.getElementById("gainersTable");
     const geff = document.getElementById("timee");
     geft.style.color= "blueviolet";
