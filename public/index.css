@@ -90,7 +90,7 @@ margin-right: 15px;
   #tmsp{
     background-color: white;
   }
-  td:hover{
+  .open{
       cursor: pointer;
       color: rgb(90, 20, 156);
     }

@@ -83,7 +83,7 @@ const add="/api/server";
         gainers.forEach(stock => {
       const row = document.createElement("tr");
       row.innerHTML = `
-                      <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" >${stock.symbol}</td>
+                      <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" class="open" >${stock.symbol}</td>
 
         <td>${stock.open_price}</td>
         <td>${stock.ltp}</td>
@@ -153,7 +153,7 @@ const add="/api/server";
         gainers.forEach(stock => {
       const row = document.createElement("tr");
       row.innerHTML = `
-                      <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" >${stock.symbol}</td>
+                      <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" class="open" >${stock.symbol}</td>
 
         <td>${stock.open_price}</td>
         <td>${stock.ltp}</td>
@@ -223,7 +223,7 @@ const add="/api/server";
         gainers.forEach(stock => {
       const row = document.createElement("tr");
       row.innerHTML = `
-                      <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" >${stock.symbol}</td>
+                      <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" class="open" >${stock.symbol}</td>
 
         <td>${stock.open_price}</td>
         <td>${stock.ltp}</td>
@@ -294,7 +294,7 @@ async function fetchGainers() {
         gainers.forEach(stock => {
       const row = document.createElement("tr");
       row.innerHTML = `
-              <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" >${stock.symbol}</td>
+              <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" class="open" >${stock.symbol}</td>
 
         <td>${stock.open_price}</td>
         <td>${stock.ltp}</td>
