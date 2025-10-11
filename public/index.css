@@ -90,10 +90,10 @@ margin-right: 15px;
   #tmsp{
     background-color: white;
   }
-  .open:hover{
+  /* .open:hover{
       cursor: pointer;
       color: rgb(90, 20, 156);
-    }
+    } */
 
   @media (max-width: 600px) {
     table{
