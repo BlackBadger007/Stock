@@ -11,7 +11,7 @@ const add="/api/server";
   const t13= document.getElementById("t3");
   const t14= document.getElementById("t4");
 
-  // if(global.currentPage == "/"){
+  // if(global.currentPage == "/public/index.html"){
   if(global.currentPage == "/"){
     t11.style.backgroundColor="rgb(213, 213, 107)";
     t12.style.backgroundColor="white";
@@ -79,10 +79,12 @@ const add="/api/server";
         const tbody = document.querySelector("#gainersTable tbody");
         tbody.innerHTML = "";
 
+        // <td>${stock.symbol}</td>
         gainers.forEach(stock => {
       const row = document.createElement("tr");
       row.innerHTML = `
-        <td>${stock.symbol}</td>
+                      <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" >${stock.symbol}</td>
+
         <td>${stock.open_price}</td>
         <td>${stock.ltp}</td>
         <td>${stock.perChange}</td>
@@ -145,11 +147,14 @@ const add="/api/server";
         const gainers = data.NIFTYNEXT50.data;
         const tbody = document.querySelector("#gainersTable tbody");
         tbody.innerHTML = "";
+        // <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" >${stock.symbol}</td>
 
+        // <td>${stock.symbol}</td>
         gainers.forEach(stock => {
       const row = document.createElement("tr");
       row.innerHTML = `
-        <td>${stock.symbol}</td>
+                      <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" >${stock.symbol}</td>
+
         <td>${stock.open_price}</td>
         <td>${stock.ltp}</td>
         <td>${stock.perChange}</td>
@@ -214,10 +219,12 @@ const add="/api/server";
         const tbody = document.querySelector("#gainersTable tbody");
         tbody.innerHTML = "";
 
+        // <td>${stock.symbol}</td>
         gainers.forEach(stock => {
       const row = document.createElement("tr");
       row.innerHTML = `
-        <td>${stock.symbol}</td>
+                      <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" >${stock.symbol}</td>
+
         <td>${stock.open_price}</td>
         <td>${stock.ltp}</td>
         <td>${stock.perChange}</td>
@@ -282,11 +289,13 @@ async function fetchGainers() {
         const gainers = data.allSec.data;
         const tbody = document.querySelector("#gainersTable tbody");
         tbody.innerHTML = "";
-
+        
+        // <td>${stock.symbol}</td>
         gainers.forEach(stock => {
       const row = document.createElement("tr");
       row.innerHTML = `
-        <td>${stock.symbol}</td>
+              <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" >${stock.symbol}</td>
+
         <td>${stock.open_price}</td>
         <td>${stock.ltp}</td>
         <td>${stock.perChange}</td>
