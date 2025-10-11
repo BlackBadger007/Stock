@@ -98,6 +98,9 @@ margin-right: 15px;
       cursor: pointer;
       color: rgb(90, 20, 156);
      }
+     a.a1:hover{
+      color: rgb(90, 20, 156);
+     }
 
   @media (max-width: 600px) {
     table{
