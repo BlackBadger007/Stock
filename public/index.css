@@ -51,7 +51,7 @@ margin-right: 15px;
   color: blueviolet;
   font-size: 16px;
  }
- a.a1:hover{
+ a:hover{
     color: rgb(90, 20, 156);
 
  }
@@ -74,7 +74,8 @@ margin-right: 15px;
  }
 
  .a1:hover{
-  color: rgb(90, 20, 156);
+  /* color: rgb(90, 20, 156); */
+  color: red;
  }
 
  #timee{
