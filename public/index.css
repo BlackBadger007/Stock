@@ -51,6 +51,10 @@ margin-right: 15px;
   color: blueviolet;
   font-size: 16px;
  }
+ a.a1:hover{
+    color: rgb(90, 20, 156);
+
+ }
  #type{
   width: 100%;
 
