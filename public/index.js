@@ -274,6 +274,7 @@ async function fetchGainers() {
       link.style.color = 'blueviolet';        // Change text color
       
     });
+
         
         const gef = document.getElementById("fifi");
         gef.innerText=`NSE Top Gainers`;
