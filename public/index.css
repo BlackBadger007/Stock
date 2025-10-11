@@ -73,10 +73,10 @@ margin-right: 15px;
   padding: 0px;
  }
 
- .a1:hover{
+ /* .a1:hover{ */
   /* color: rgb(90, 20, 156); */
-  color: red;
- }
+  /* color: red; */
+ /* } */
 
  #timee{
   color: blueviolet;
@@ -94,6 +94,10 @@ margin-right: 15px;
       cursor: pointer;
       color: rgb(90, 20, 156);
     } */
+     td.open:hover {
+      cursor: pointer;
+      color: rgb(90, 20, 156);
+     }
 
   @media (max-width: 600px) {
     table{
@@ -139,9 +143,6 @@ margin-right: 15px;
     #fifi h2{
       margin-left: 10px;
     }
-    .a1:hover{
-  color: rgb(90, 20, 156);
- }
     
 }
 
