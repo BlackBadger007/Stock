@@ -56,7 +56,7 @@ const ser="/api/volServer";
     t11.style.backgroundColor="white";
     t14.style.backgroundColor="white";
     fetchVolGainers();
-    setInterval(fetchNiftyNextGainers, 13000);
+    setInterval(fetchVolGainers, 13000);
   }
 
   async function fetchNiftyGainers() {
