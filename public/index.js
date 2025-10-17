@@ -54,7 +54,7 @@ const add="/api/server";
     t13.style.backgroundColor="white";
     t11.style.backgroundColor="white";
     t14.style.backgroundColor="white";
-    fetchNiftyNextGainers();
+    fetchVolGainers();
     setInterval(fetchNiftyNextGainers, 13000);
   }
 
@@ -368,30 +368,33 @@ async function fetchVolGainers() {
         gef.innerText=`NSE Top Gainers`;
         gef.style.color= "blueviolet";
         // Sort by trade quantity descending
-        data.allSec.data.sort((a, b) => b.trade_quantity - a.trade_quantity);
+        // data.allSec.data.sort((a, b) => b.trade_quantity - a.trade_quantity);
+        data.sort((a, b) => b.trade_quantity - a.trade_quantity);
         
         // Update sync time
         const time = document.getElementById("timee");
-        time.innerText = `${data.allSec.timestamp}`;
+        // time.innerText = `${data.allSec.timestamp}`;
         
         
         // Render table
         console.log(data);
 
-        const gainers = data.allSec.data;
+        // const gainers = data.allSec.data;
+        const gainers = data;
         const tbody = document.querySelector("#gainersTable tbody");
         tbody.innerHTML = "";
         
         // <td>${stock.symbol}</td>
+        // <td>${stock.open_price}</td>
         gainers.forEach(stock => {
       const row = document.createElement("tr");
       row.innerHTML = `
               <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" class="open" >${stock.symbol}</td>
 
-        <td>${stock.open_price}</td>
+        <td>--</td>
         <td>${stock.ltp}</td>
-        <td>${stock.perChange}</td>
-        <td>${stock.trade_quantity}</td>
+        <td>${stock.pChange}</td>
+        <td>${stock.volume}</td>
       `;
       tbody.appendChild(row);
     });
