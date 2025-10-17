@@ -371,7 +371,7 @@ async function fetchVolGainers() {
         gef.style.color= "blueviolet";
         // Sort by trade quantity descending
         // data.allSec.data.sort((a, b) => b.trade_quantity - a.trade_quantity);
-        data.data.sort((a, b) => b.trade_quantity - a.trade_quantity);
+        data.data.sort((a, b) => b.volume - a.volume);
         
         // Update sync time
         const time = document.getElementById("timee");
