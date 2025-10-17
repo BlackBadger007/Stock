@@ -371,18 +371,17 @@ async function fetchVolGainers() {
         gef.style.color= "blueviolet";
         // Sort by trade quantity descending
         // data.allSec.data.sort((a, b) => b.trade_quantity - a.trade_quantity);
-        data.sort((a, b) => b.trade_quantity - a.trade_quantity);
+        data.data.sort((a, b) => b.trade_quantity - a.trade_quantity);
         
         // Update sync time
         const time = document.getElementById("timee");
-        // time.innerText = `${data.allSec.timestamp}`;
+        time.innerText = `${data.timestamp}`;
         
         
         // Render table
-        console.log(data);
 
         // const gainers = data.allSec.data;
-        const gainers = data;
+        const gainers = data.data;
         const tbody = document.querySelector("#gainersTable tbody");
         tbody.innerHTML = "";
         
