@@ -10,6 +10,7 @@ const add="/api/server";
   const t12= document.getElementById("t2");
   const t13= document.getElementById("t3");
   const t14= document.getElementById("t4");
+  const t15= document.getElementById("t5");
 
   // if(global.currentPage == "/public/index.html"){
   if(global.currentPage == "/"){
@@ -17,6 +18,7 @@ const add="/api/server";
     t12.style.backgroundColor="white";
     t13.style.backgroundColor="white";
     t14.style.backgroundColor="white";
+    t15.style.backgroundColor="white";
     fetchGainers();
     setInterval(fetchGainers, 13000);
   // }else if(global.currentPage == "/public/nifty50.html"){
@@ -25,6 +27,7 @@ const add="/api/server";
     t12.style.backgroundColor="white";
     t11.style.backgroundColor="white";
     t14.style.backgroundColor="white";
+    t15.style.backgroundColor="white";
     fetchNiftyGainers();
     setInterval(fetchNiftyGainers, 13000);
   // }else if(global.currentPage == "/public/bankNifty.html"){
@@ -33,6 +36,7 @@ const add="/api/server";
     t11.style.backgroundColor="white";
     t13.style.backgroundColor="white";
     t14.style.backgroundColor="white";
+    t15.style.backgroundColor="white";
     fetchBankNiftyGainers();
     setInterval(fetchBankNiftyGainers, 13000);
   // }else if(global.currentPage == "/public/niftyNext50.html"){
@@ -41,6 +45,15 @@ const add="/api/server";
     t12.style.backgroundColor="white";
     t13.style.backgroundColor="white";
     t11.style.backgroundColor="white";
+    t15.style.backgroundColor="white";
+    fetchNiftyNextGainers();
+    setInterval(fetchNiftyNextGainers, 13000);
+  }else if(global.currentPage == "/volGainers.html"){
+    t15.style.backgroundColor="rgb(213, 213, 107)";
+    t12.style.backgroundColor="white";
+    t13.style.backgroundColor="white";
+    t11.style.backgroundColor="white";
+    t14.style.backgroundColor="white";
     fetchNiftyNextGainers();
     setInterval(fetchNiftyNextGainers, 13000);
   }
@@ -287,6 +300,84 @@ async function fetchGainers() {
         time.innerText = `${data.allSec.timestamp}`;
         
         // Render table
+        const gainers = data.allSec.data;
+        const tbody = document.querySelector("#gainersTable tbody");
+        tbody.innerHTML = "";
+        
+        // <td>${stock.symbol}</td>
+        gainers.forEach(stock => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+              <td onclick = "window.open('https://www.tradingview.com/chart/zNwfcWcn/?symbol=${stock.symbol}')" class="open" >${stock.symbol}</td>
+
+        <td>${stock.open_price}</td>
+        <td>${stock.ltp}</td>
+        <td>${stock.perChange}</td>
+        <td>${stock.trade_quantity}</td>
+      `;
+      tbody.appendChild(row);
+    });
+
+
+  } catch (error) {   
+    
+    const gef = document.getElementById("fifi");
+    const geff = document.getElementById("timee");
+    const geft = document.getElementById("gainersTable");
+    gef.style.color= "#026e72";
+    geft.style.color= "#026e72";
+    geff.style.color= "#026e72";
+    const links = document.querySelectorAll('.a1');
+    links.forEach(link => {
+      link.style.color = '#026e72';        // Change text color
+      
+    });
+    
+    console.error("Fetch error:", error.message);
+
+    // Show error in UI
+    // const errorBox = document.getElementById("error-message");
+    // if (errorBox) {
+    //   errorBox.textContent = `Error: ${error.message}`;
+    // }
+  }
+}
+async function fetchVolGainers() {
+    try {
+                const response = await fetch("/api/volServer");
+
+        
+        if (!response.ok) {
+            throw new Error(`Server responded with status ${response.status}`);
+        }
+        
+        const data = await response.json();
+
+    const geft = document.getElementById("gainersTable");
+    const geff = document.getElementById("timee");
+    geft.style.color= "blueviolet";
+    geff.style.color= "blueviolet";
+    const links = document.querySelectorAll('.a1');
+    links.forEach(link => {
+      link.style.color = 'blueviolet';        // Change text color
+      
+    });
+
+        
+        const gef = document.getElementById("fifi");
+        gef.innerText=`NSE Top Gainers`;
+        gef.style.color= "blueviolet";
+        // Sort by trade quantity descending
+        data.allSec.data.sort((a, b) => b.trade_quantity - a.trade_quantity);
+        
+        // Update sync time
+        const time = document.getElementById("timee");
+        time.innerText = `${data.allSec.timestamp}`;
+        
+        
+        // Render table
+        console.log(data);
+
         const gainers = data.allSec.data;
         const tbody = document.querySelector("#gainersTable tbody");
         tbody.innerHTML = "";
