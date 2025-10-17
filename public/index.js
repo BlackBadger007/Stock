@@ -5,6 +5,7 @@ const global= {
 
 // const add="http://localhost:3000";
 const add="/api/server";
+const ser="/api/volServer";
 
   const t11= document.getElementById("t1");
   const t12= document.getElementById("t2");
@@ -344,7 +345,7 @@ async function fetchGainers() {
 }
 async function fetchVolGainers() {
     try {
-                const response = await fetch("/api/volServer");
+                const response = await fetch(ser);
 
         
         if (!response.ok) {
@@ -352,6 +353,7 @@ async function fetchVolGainers() {
         }
         
         const data = await response.json();
+        console.log(data);
 
     const geft = document.getElementById("gainersTable");
     const geff = document.getElementById("timee");
